@@ -1,19 +1,19 @@
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animation.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Animation.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animations.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Animations.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Brick.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Brick.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Coin.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Coin.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Collision.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Collision.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\debug.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\debug.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Game.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Game.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\GameObject.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\GameObject.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Goomba.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Goomba.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\main.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\main.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Mario.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Mario.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Platform.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Platform.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\PlayScene.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\PlayScene.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Portal.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Portal.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\SampleKeyEventHandler.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\SampleKeyEventHandler.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprite.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Sprite.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprites.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Sprites.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Textures.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Textures.obj
-E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Utils.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Utils.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Animation.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Animation.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Animations.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Animations.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Brick.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Brick.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Coin.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Coin.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Collision.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Collision.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\debug.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\debug.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Game.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Game.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\GameObject.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\GameObject.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Goomba.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Goomba.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\main.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\main.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Mario.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Mario.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Platform.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Platform.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\PlayScene.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\PlayScene.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Portal.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Portal.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\SampleKeyEventHandler.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\SampleKeyEventHandler.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Sprite.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Sprite.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Sprites.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Sprites.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Textures.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Textures.obj
+C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\Utils.cpp;C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\Utils.obj
