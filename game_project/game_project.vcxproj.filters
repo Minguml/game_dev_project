@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\AnimationFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\AssetIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Brick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Coin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Goomba.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\KeyEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Mario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\PlayScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Portal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\SampleKeyEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Textures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Brick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Coin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Goomba.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Mario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\PlayScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Portal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\SampleKeyEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprites.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Textures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

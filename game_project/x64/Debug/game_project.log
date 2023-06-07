@@ -1,0 +1,19 @@
+﻿  Animation.cpp
+  Animations.cpp
+  Brick.cpp
+  Coin.cpp
+  Collision.cpp
+  Game.cpp
+  GameObject.cpp
+  Goomba.cpp
+  Mario.cpp
+  Platform.cpp
+  PlayScene.cpp
+  Portal.cpp
+  SampleKeyEventHandler.cpp
+  Sprite.cpp
+  Sprites.cpp
+  Textures.cpp
+  main.cpp
+  Generating Code...
+  game_project.vcxproj -> C:\Users\kuuha\OneDrive\Desktop\game_project\x64\Debug\game_project.exe

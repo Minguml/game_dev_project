@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{82c33b9c-5322-45ef-94f9-3ece2c04f94c}</ProjectGuid>
+    <RootNamespace>gameproject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d10.lib;dxguid.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animation.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\AnimationFrame.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animations.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\AssetIDs.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Brick.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Coin.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Collision.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\debug.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Game.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\GameObject.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Goomba.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\KeyEventHandler.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Mario.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Platform.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\PlayScene.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Portal.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\SampleKeyEventHandler.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Scene.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprite.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprites.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Texture.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Textures.h" />
+    <ClInclude Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animation.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Animations.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Brick.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Coin.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Collision.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\debug.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Game.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\GameObject.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Goomba.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\main.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Mario.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Platform.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\PlayScene.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Portal.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\SampleKeyEventHandler.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprite.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Sprites.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Textures.cpp" />
+    <ClCompile Include="E:\Nhập môn game\gamedev-intro-tutorials-master\05-SceneManager\Utils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\Microsoft.DXSDK.D3DX.targets" Condition="Exists('..\packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\Microsoft.DXSDK.D3DX.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\Microsoft.DXSDK.D3DX.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.DXSDK.D3DX.9.29.952.8\build\native\Microsoft.DXSDK.D3DX.targets'))" />
+  </Target>
+</Project>
