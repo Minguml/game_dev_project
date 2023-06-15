@@ -4,6 +4,7 @@
 #include "Mario.h"
 #include "Game.h"
 
+#include "Platform.h"
 #include "Goomba.h"
 #include "Coin.h"
 #include "Portal.h"
@@ -100,6 +101,34 @@ void CMario::OnCollisionWithPortal(LPCOLLISIONEVENT e)
 {
 	CPortal* p = (CPortal*)e->obj;
 	CGame::GetInstance()->InitiateSwitchScene(p->GetSceneId());
+}
+
+void CMario::OnCollisionWithPlatform(LPCOLLISIONEVENT e)
+{
+	CPlatform * platform = dynamic_cast<CPlatform*>(e->obj);
+
+	switch (platform->getType())
+	{
+	case 3:
+		if (isSitting && e->ny < 0)
+			platform->SetState(PLATFORM_PASSABLE);
+		break;
+	case 1:
+		if (e->ny < 0)
+		{
+			y -= Push_Up_Platform;
+			platform->SetState(-1);
+		}
+		else
+		{
+			platform->SetState(PLATFORM_PASSABLE);
+		}
+		break;
+	case 2:
+		DebugOut(L">>> Mario DIE >>> \n");
+		SetState(MARIO_STATE_DIE);
+		break;
+	}
 }
 
 //
@@ -239,7 +268,7 @@ void CMario::Render()
 
 	animations->Get(aniId)->Render(x, y);
 
-	//RenderBoundingBox();
+	RenderBoundingBox();
 	
 	DebugOutTitle(L"Coins: %d", coin);
 }

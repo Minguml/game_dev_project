@@ -1,0 +1,19 @@
+# id	left	top	right	bottom	texture_id
+[SPRITES]
+#big cloud
+51000	390	117	405	132	20
+52000	408	117	423	132	20
+53000	426	117	441	132	20
+
+#small cute cloud
+51100	120	273	136	295	35
+51200	136	273	152	295	35	
+51300	152	273	168	295	35
+
+#transparent block
+51001	250	150	266	166	20
+52002	250	150	266	166	20
+53003	250	150	266	166	20
+
+# ani_id	sprite1_id	time1	sprite2_id	time2	...
+[ANIMATIONS]

@@ -6,6 +6,7 @@
 #include "Brick.h"
 #include "Mario.h"
 #include "Goomba.h"
+#include "Mushroom.h"
 //#include "Koopas.h"
 
 
@@ -39,6 +40,9 @@ public:
 	void PurgeDeletedObjects();
 
 	static bool IsGameObjectDeleted(const LPGAMEOBJECT& o);
+	void AddObjectToScene(LPGAMEOBJECT obj) {
+		this->objects.push_back(obj);
+	}
 };
 
 typedef CPlayScene* LPPLAYSCENE;
