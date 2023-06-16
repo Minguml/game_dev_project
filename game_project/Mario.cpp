@@ -1,9 +1,9 @@
 #include <algorithm>
 #include "debug.h"
-
+#include "Leaf.h"
 #include "Mario.h"
 #include "Game.h"
-
+#include "Mushroom.h"
 #include "Platform.h"
 #include "Goomba.h"
 #include "Coin.h"
@@ -11,7 +11,6 @@
 #include "QuestionBlock.h"
 #include "FireFlower.h"
 #include "Fireball.h"
-
 #include "Collision.h"
 
 void CMario::Update(DWORD dt, vector<LPGAMEOBJECT> *coObjects)
@@ -89,6 +88,97 @@ void CMario::OnCollisionWith(LPCOLLISIONEVENT e)
 		OnCollisionWithKoopa(e);
 	else if (dynamic_cast<CGoomba*>(e->obj))
 		OnCollisionWithGoomba(e);
+	else if (dynamic_cast<CLeaf*>(e->obj))
+		OnCollisionWithLeaf(e);
+	else if (dynamic_cast<CQuestionBlock*>(e->obj))
+		OnCollisionWithQuestionBlock(e);
+	else if (dynamic_cast<CMushroom*>(e->obj))
+		OnCollisionWithMushroom(e);
+}
+
+void CMario::OnCollisionWithMushroom(LPCOLLISIONEVENT e)
+{
+	CMushroom* objMushroom = dynamic_cast<CMushroom*>(e->obj);
+	e->obj->Delete();
+	y = y - Push_Up_Platform * 2;
+	if (level == MARIO_LEVEL_SMALL)
+		SetLevel(MARIO_LEVEL_BIG);
+}
+
+void CMario::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
+{
+	CQuestionBlock* questionBlock = dynamic_cast<CQuestionBlock*>(e->obj);
+
+	if (e->ny > 0 && questionBlock->IsEmpty() == false)
+	{
+		if (questionBlock->GetBlockType() == 0) // coin
+		{
+			questionBlock->SetEmpty(true);
+			float bx, by;
+			questionBlock->GetPosition(bx, by);
+
+			CCoin* coin = new CCoin(bx, by - 2 * COIN_WIDTH, 1);
+			LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+
+			thisscene->AddObjectToScene(coin);
+
+			coin->SetFly(true);
+			questionBlock->SetPosition(bx, by);
+
+			coin++;
+
+			/*CGame::GetInstance()->GetCurrentScene()->SetCoin(coin);*/
+		}
+		else if (questionBlock->GetBlockType() == 1) // mushroom
+		{
+			questionBlock->SetEmpty(true);
+			float bx, by;
+			questionBlock->GetPosition(bx, by);
+
+			CQuestionBlock* newQuestionBlock = new CQuestionBlock(bx, by, 0);
+			LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+
+
+			questionBlock->Delete();
+			newQuestionBlock->SetPosition(bx, by);
+
+			CMushroom* mushroom = new CMushroom(bx, by - 32);
+			newQuestionBlock->SetEmpty(true);
+
+			thisscene->AddObjectToScene(mushroom);
+			thisscene->AddObjectToScene(newQuestionBlock);
+		}
+		else if (questionBlock->GetBlockType() == 2) //leaf
+		{
+			questionBlock->SetEmpty(true);
+			float bx, by;
+			questionBlock->GetPosition(bx, by);
+
+			LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+			CQuestionBlock* newQuesttionBlock = new CQuestionBlock(bx, by);
+
+			questionBlock->Delete();
+			newQuesttionBlock->SetPosition(bx, by);
+
+			CLeaf* leaf = new CLeaf(bx + 16, by - 32);
+			newQuesttionBlock->SetEmpty(true);
+
+			thisscene->AddObjectToScene(leaf);
+			thisscene->AddObjectToScene(newQuesttionBlock);
+		}
+	}
+}
+
+void CMario::OnCollisionWithLeaf(LPCOLLISIONEVENT e)
+{
+	CLeaf* leaf = dynamic_cast<CLeaf*>(e->obj);
+
+	if (level == MARIO_LEVEL_BIG)
+	{
+		y = y - Push_Up_Platform * 2;
+		SetLevel(MARIO_LEVEL_TAIL);
+	}
+	leaf->Delete();
 }
 
 void CMario::OnCollisionWithFireball(LPCOLLISIONEVENT e)
@@ -245,10 +335,19 @@ void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
 	// jump on top >> kill Goomba and deflect a bit 
 	if (e->ny < 0)
 	{
-		if (goomba->GetState() != GOOMBA_STATE_DIE)
+		vy = -MARIO_JUMP_DEFLECT_SPEED;
+
+		if (goomba->GetState() == GOOMBA_STATE_WALKING_WING)
+		{
+			float goox, gooy;
+			goomba->GetPosition(goox, gooy);
+			goomba->SetPosition(goox, gooy - 10);
+			goomba->SetState(GOOMBA_STATE_WALKING);
+
+		}
+		else if (goomba->GetState() == GOOMBA_STATE_WALKING)
 		{
 			goomba->SetState(GOOMBA_STATE_DIE);
-			vy = -MARIO_JUMP_DEFLECT_SPEED;
 		}
 	}
 	else // hit by Goomba
@@ -259,7 +358,7 @@ void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
 			{
 				if (level > MARIO_LEVEL_SMALL)
 				{
-					level = MARIO_LEVEL_SMALL;
+					level = level - 1;
 					StartUntouchable();
 				}
 				else

@@ -114,6 +114,9 @@
     <ClInclude Include="TransparentBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FallWarning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -198,6 +201,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TransparentBlock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FallWarning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

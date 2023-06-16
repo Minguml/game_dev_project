@@ -7,8 +7,10 @@
 #include "Game.h"
 #include "Debug.h"
 
+
 CKoopa::CKoopa(float x, float y, int type) :CGameObject(x, y)
 {
+	fallWarning = new CFallWarning(x, y);
 	this->ax = 0;
 	this->ay = KOOPA_GRAVITY;
 	this->type = type;
@@ -117,7 +119,7 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 
 	if (e->nx > 0)
 	{
-		if (qBlock->GetBrickType() == 1)		//Mushroom
+		if (qBlock->GetBlockType() == 1)		//Mushroom
 		{
 			qBlock->SetEmpty(true);
 			float bx, by;
@@ -136,7 +138,7 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 			thisscene->AddObjectToScene(newmushroom);
 			thisscene->AddObjectToScene(newQuestionBlock);
 		}
-		else if (qBlock->GetBrickType() == 2)		//Leaf
+		else if (qBlock->GetBlockType() == 2)		//Leaf
 		{
 			qBlock->SetEmpty(true);
 			float bx, by;
@@ -162,6 +164,20 @@ void CKoopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 {
 	vy += ay * dt;
 	vx += ax * dt;
+
+	if (state == KOOPA_STATE_WALKING)
+	{
+		float FWx, FWy;
+		if (vx > 0)
+			fallWarning->SetPosition(this->x + KOOPA_BBOX_WIDTH, this->y - KOOPA_BBOX_HEIGHT);
+		else
+			fallWarning->SetPosition(this->x - KOOPA_BBOX_WIDTH, this->y - KOOPA_BBOX_HEIGHT);
+		fallWarning->Update(dt, coObjects);
+
+		fallWarning->GetPosition(FWx, FWy);
+		if (FWy >= this->y + 1)
+			vx = -vx;
+	}
 
 	if (type == 1 || type == 3)
 	{

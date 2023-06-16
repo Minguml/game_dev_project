@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "FallWarning.h"
 
 #define KOOPA_GRAVITY 0.0005f
 #define KOOPA_JUMP_SPEED    0.3f
@@ -49,6 +50,8 @@ protected:
 
     ULONGLONG shell_start;
     BOOLEAN isOnPlatform = false;
+
+    CFallWarning* fallWarning;
 
     virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
     virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);

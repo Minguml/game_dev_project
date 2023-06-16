@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "AssetIDs.h"
-
+#include "QuestionBlock.h"
 #include "PlayScene.h"
 #include "Utils.h"
 #include "Textures.h"
@@ -119,7 +119,15 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 
 		DebugOut(L"[INFO] Player object has been created!\n");
 		break;
-	case OBJECT_TYPE_GOOMBA: obj = new CGoomba(x, y); break;
+
+	case OBJECT_TYPE_GOOMBA: 
+	{
+		int goombatype = (int)atoi(tokens[3].c_str());
+
+		obj = new CGoomba(x, y, goombatype);
+		break;
+	}
+
 	case OBJECT_TYPE_BRICK: obj = new CBrick(x, y); break;
 	case OBJECT_TYPE_COIN: obj = new CCoin(x, y); break;
 	case OBJECT_TYPE_MUSHROOM: obj = new CMushroom(x, y); break;
@@ -203,7 +211,12 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	}
 	break;
 
-
+	case OBJECT_TYPE_QUESTION_BLOCK:
+	{
+		int block_type = (int)atoi(tokens[3].c_str());
+		obj = new CQuestionBlock(x, y, block_type);
+		break;
+	}
 
 	default:
 		DebugOut(L"[ERROR] Invalid object type: %d\n", object_type);

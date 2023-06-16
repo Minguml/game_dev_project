@@ -47,4 +47,3 @@ public:
 	virtual void SetState(int state);
 	void StartAppear() { appear_start = GetTickCount64(); }
 };
-

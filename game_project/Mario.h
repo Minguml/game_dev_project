@@ -135,13 +135,15 @@ class CMario : public CGameObject
 	int untouchable;
 	int kickable;
 	int hitable;
+	int coin;
 
 	ULONGLONG untouchable_start;
 	ULONGLONG kickable_start;
 	ULONGLONG hitable_start;
+
 	CKoopa* shell = NULL;
 	BOOLEAN isOnPlatform;
-	int coin; 
+	
 
 	bool isCarrying = false;
 
@@ -152,6 +154,9 @@ class CMario : public CGameObject
 	void OnCollisionWithFireball(LPCOLLISIONEVENT e);
 	void OnCollisionWithFireFlower(LPCOLLISIONEVENT e);
 	void OnCollisionWithKoopa(LPCOLLISIONEVENT e);
+	void OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e);
+	void OnCollisionWithLeaf(LPCOLLISIONEVENT e);
+	void OnCollisionWithMushroom(LPCOLLISIONEVENT e);
 
 	int GetAniIdBig();
 	int GetAniIdSmall();
@@ -187,6 +192,7 @@ public:
 	void OnNoCollision(DWORD dt);
 	void OnCollisionWith(LPCOLLISIONEVENT e);
 
+	int GetLevel() { return level; }
 	void SetLevel(int l);
 	void SetKickable(int kick)
 	{

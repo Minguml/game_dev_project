@@ -24,13 +24,13 @@
 
 class CQuestionBlock : public CGameObject
 {
-	int brick_type; //0: coin , 1 mushroom, 2 leaf, 3 life up 
+	int block_type; //0: coin , 1 mushroom, 2 leaf, 3 life up 
 	bool isEmpty = false;
 	float beforeHit_y;
 public:
 	CQuestionBlock(float x, float y, int type = 0) : CGameObject(x, y)
 	{
-		this->brick_type = type;
+		this->block_type = type;
 		this->beforeHit_y = y;
 	}
 	void Render();
@@ -39,5 +39,5 @@ public:
 
 	void SetEmpty(bool state) { this->isEmpty = state; }
 	bool IsEmpty() { return this->isEmpty; }
-	int GetBrickType() { return this->brick_type; }
+	int GetBlockType() { return this->block_type; }
 };
