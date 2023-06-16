@@ -123,6 +123,14 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BRICK: obj = new CBrick(x, y); break;
 	case OBJECT_TYPE_COIN: obj = new CCoin(x, y); break;
 	case OBJECT_TYPE_MUSHROOM: obj = new CMushroom(x, y); break;
+	case OBJECT_TYPE_KOOPAS:
+	{
+		int koopaType = (int)atoi(tokens[3].c_str());
+
+		obj = new CKoopa(x, y, koopaType);
+		break;
+	}
+
 	case OJBECT_TYPE_ENEMY_FLOWER:
 	{
 		int flowerType = (int)atoi(tokens[3].c_str());

@@ -3,7 +3,7 @@
 
 #include "Animation.h"
 #include "Animations.h"
-
+#include "Koopa.h"
 #include "debug.h"
 
 #define MARIO_WALKING_SPEED		0.1f
@@ -78,6 +78,28 @@
 #define ID_ANI_MARIO_SMALL_JUMP_RUN_RIGHT 1600
 #define ID_ANI_MARIO_SMALL_JUMP_RUN_LEFT 1601
 
+//SQUIRREL MARIO
+#define ID_ANI_MARIO_TAIL_JUMP_RUN_RIGHT 2600
+#define ID_ANI_MARIO_TAIL_JUMP_RUN_LEFT 2601
+#define ID_ANI_MARIO_TAIL_JUMP_WALK_LEFT 2501
+#define ID_ANI_MARIO_TAIL_JUMP_WALK_RIGHT 2500
+#define ID_ANI_MARIO_TAIL_SIT_RIGHT 2700
+#define ID_ANI_MARIO_TAIL_SIT_LEFT 2701
+#define ID_ANI_MARIO_TAIL_IDLE_RIGHT 2100
+#define ID_ANI_MARIO_TAIL_IDLE_LEFT 2101    
+#define ID_ANI_MARIO_TAIL_BRACE_RIGHT 2400
+#define ID_ANI_MARIO_TAIL_RUNNING_RIGHT 2300
+#define ID_ANI_MARIO_TAIL_WALKING_RIGHT 2200
+
+#define ID_ANI_MARIO_TAIL_BRACE_LEFT 2401
+#define ID_ANI_MARIO_TAIL_RUNNING_LEFT 2301
+#define ID_ANI_MARIO_TAIL_WALKING_LEFT 2201
+
+#define MARIO_TAIL_BBOX_WIDTH  14
+#define MARIO_TAIL_BBOX_HEIGHT 24
+#define MARIO_TAIL_SITTING_BBOX_WIDTH  18
+#define MARIO_TAIL_SITTING_BBOX_HEIGHT 16
+
 #pragma endregion
 
 #define GROUND_Y 160.0f
@@ -87,6 +109,7 @@
 
 #define	MARIO_LEVEL_SMALL	1
 #define	MARIO_LEVEL_BIG		2
+#define MARIO_LEVEL_TAIL	3
 
 #define MARIO_BIG_BBOX_WIDTH  14
 #define MARIO_BIG_BBOX_HEIGHT 24
@@ -108,19 +131,32 @@ class CMario : public CGameObject
 	float ax;				// acceleration on x 
 	float ay;				// acceleration on y 
 
-	int level; 
-	int untouchable; 
+	int level;
+	int untouchable;
+	int kickable;
+	int hitable;
+
 	ULONGLONG untouchable_start;
+	ULONGLONG kickable_start;
+	ULONGLONG hitable_start;
+	CKoopa* shell = NULL;
 	BOOLEAN isOnPlatform;
 	int coin; 
+
+	bool isCarrying = false;
 
 	void OnCollisionWithGoomba(LPCOLLISIONEVENT e);
 	void OnCollisionWithCoin(LPCOLLISIONEVENT e);
 	void OnCollisionWithPortal(LPCOLLISIONEVENT e);
 	void OnCollisionWithPlatform(LPCOLLISIONEVENT e);
+	void OnCollisionWithFireball(LPCOLLISIONEVENT e);
+	void OnCollisionWithFireFlower(LPCOLLISIONEVENT e);
+	void OnCollisionWithKoopa(LPCOLLISIONEVENT e);
 
 	int GetAniIdBig();
 	int GetAniIdSmall();
+	int GetAniIdTail();
+
 
 public:
 	CMario(float x, float y) : CGameObject(x, y)
@@ -133,6 +169,7 @@ public:
 		level = MARIO_LEVEL_SMALL;
 		untouchable = 0;
 		untouchable_start = -1;
+		hitable = 0;
 		isOnPlatform = false;
 		coin = 0;
 	}
@@ -151,7 +188,14 @@ public:
 	void OnCollisionWith(LPCOLLISIONEVENT e);
 
 	void SetLevel(int l);
+	void SetKickable(int kick)
+	{
+		this->kickable = kick;
+	}
 	void StartUntouchable() { untouchable = 1; untouchable_start = GetTickCount64(); }
+	void StartKickable() { kickable = 1; kickable_start = GetTickCount64(); }
+	void StartHittable() { hitable = 1; hitable_start = GetTickCount64(); }
+	void SetCarryingState(bool a) { this->isCarrying = a; }
 
 	void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 };

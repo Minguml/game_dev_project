@@ -17,6 +17,8 @@
 #define ID_ANI_GOOMBA_WALKING 5000
 #define ID_ANI_GOOMBA_DIE 5001
 
+#define GOOMBA_STATE_FLIPPED    300
+
 class CGoomba : public CGameObject
 {
 protected:
