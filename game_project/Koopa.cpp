@@ -117,7 +117,7 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 	CQuestionBlock* qBlock = dynamic_cast <CQuestionBlock*> (e->obj);
 	if (state != KOOPA_STATE_SHELL_MOVING) return;
 
-	if (e->nx > 0)
+	if (e->nx < 0 && state == KOOPA_STATE_SHELL_MOVING)
 	{
 		if (qBlock->GetBlockType() == 1)		//Mushroom
 		{
@@ -125,18 +125,18 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 			float bx, by;
 			qBlock->GetPosition(bx, by);
 
-			LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+			LPSCENE thisScene = CGame::GetInstance()->GetCurrentScene();
 			CQuestionBlock* newQuestionBlock = new CQuestionBlock(bx, by);
 
 			qBlock->Delete();
 			newQuestionBlock->SetPosition(bx, by);
 
 
-			CMushroom* newmushroom = new CMushroom(bx, by - 32);
+			CMushroom* newMushroom = new CMushroom(bx, by - 32);
 			newQuestionBlock->SetEmpty(true);
 
-			thisscene->AddObjectToScene(newmushroom);
-			thisscene->AddObjectToScene(newQuestionBlock);
+			thisScene->AddObjectToScene(newMushroom);
+			thisScene->AddObjectToScene(newQuestionBlock);
 		}
 		else if (qBlock->GetBlockType() == 2)		//Leaf
 		{
@@ -144,29 +144,28 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 			float bx, by;
 			qBlock->GetPosition(bx, by);
 
-			LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+			LPSCENE thisScene = CGame::GetInstance()->GetCurrentScene();
 			CQuestionBlock* newQuestionBlock = new CQuestionBlock(bx, by);
 
 			qBlock->Delete();
 			newQuestionBlock->SetPosition(bx, by);
 
 
-			CLeaf* newleaf = new CLeaf(bx + 16, by - 32);
+			CLeaf* newLeaf = new CLeaf(bx + 16, by - 32);
 			newQuestionBlock->SetEmpty(true);
 
-			thisscene->AddObjectToScene(newleaf);
-			thisscene->AddObjectToScene(newQuestionBlock);
+			thisScene->AddObjectToScene(newLeaf);
+			thisScene->AddObjectToScene(newQuestionBlock);
 		}
 	}
 }
+
 
 void CKoopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 {
 	vy += ay * dt;
 	vx += ax * dt;
-
-	if (state == KOOPA_STATE_WALKING)
-	{
+	if (state == KOOPA_STATE_WALKING || state == KOOPA_STATE_WALKING + 1) {
 		float FWx, FWy;
 		if (vx > 0)
 			fallWarning->SetPosition(this->x + KOOPA_BBOX_WIDTH, this->y - KOOPA_BBOX_HEIGHT);
@@ -176,9 +175,10 @@ void CKoopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 
 		fallWarning->GetPosition(FWx, FWy);
 		if (FWy >= this->y + 1)
+		{
 			vx = -vx;
+		}
 	}
-
 	if (type == 1 || type == 3)
 	{
 		if (vy <= -KOOPA_JUMP_SPEED)
