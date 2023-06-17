@@ -5,6 +5,7 @@
 #include "QuestionBlock.h"
 #include "TransparentBlock.h"
 #include "Game.h"
+#include "Mario.h"
 #include "Debug.h"
 
 
@@ -115,6 +116,10 @@ void CKoopa::OnCollisionWithKoopa(LPCOLLISIONEVENT e)
 void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 {
 	CQuestionBlock* qBlock = dynamic_cast <CQuestionBlock*> (e->obj);
+
+	LPGAME game = CGame::GetInstance();
+	CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+	
 	if (state != KOOPA_STATE_SHELL_MOVING) return;
 
 	if (e->nx < 0 && state == KOOPA_STATE_SHELL_MOVING)
@@ -138,24 +143,27 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 			thisScene->AddObjectToScene(newMushroom);
 			thisScene->AddObjectToScene(newQuestionBlock);
 		}
-		else if (qBlock->GetBlockType() == 2)		//Leaf
+		else if (qBlock->GetBlockType() == 2) //leaf
 		{
-			qBlock->SetEmpty(true);
-			float bx, by;
-			qBlock->GetPosition(bx, by);
+			if (mario->GetLevel() == MARIO_LEVEL_SMALL)
+			{
+				qBlock->SetEmpty(true);
+				float bx, by;
+				qBlock->GetPosition(bx, by);
 
-			LPSCENE thisScene = CGame::GetInstance()->GetCurrentScene();
-			CQuestionBlock* newQuestionBlock = new CQuestionBlock(bx, by);
-
-			qBlock->Delete();
-			newQuestionBlock->SetPosition(bx, by);
+				CQuestionBlock* newQuestionBlock = new CQuestionBlock(bx, by, 0);
+				LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
 
 
-			CLeaf* newLeaf = new CLeaf(bx + 16, by - 32);
-			newQuestionBlock->SetEmpty(true);
+				qBlock->Delete();
+				newQuestionBlock->SetPosition(bx, by);
 
-			thisScene->AddObjectToScene(newLeaf);
-			thisScene->AddObjectToScene(newQuestionBlock);
+				CMushroom* mushroom = new CMushroom(bx, by - 32);
+				newQuestionBlock->SetEmpty(true);
+
+				thisscene->AddObjectToScene(mushroom);
+				thisscene->AddObjectToScene(newQuestionBlock);
+			}
 		}
 	}
 }
