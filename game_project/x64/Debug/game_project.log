@@ -1,1 +1,33 @@
-﻿
+﻿  Animation.cpp
+  Animations.cpp
+  Background.cpp
+  Brick.cpp
+  Coin.cpp
+  Collision.cpp
+  ColorBlock.cpp
+  debug.cpp
+  FallWarning.cpp
+  Fireball.cpp
+  FireFlower.cpp
+  Game.cpp
+  GameObject.cpp
+  Goomba.cpp
+  Koopa.cpp
+  Leaf.cpp
+  main.cpp
+  Mario.cpp
+  Mushroom.cpp
+  Platform.cpp
+  Generating Code...
+  Compiling...
+  PlayScene.cpp
+  Portal.cpp
+  QuestionBlock.cpp
+  SampleKeyEventHandler.cpp
+  Sprite.cpp
+  Sprites.cpp
+  Textures.cpp
+  TransparentBlock.cpp
+  Utils.cpp
+  Generating Code...
+  game_project.vcxproj -> D:\College\Nhập môn PT Game\Repo Đồ Án\game_dev_project\x64\Debug\game_project.exe
