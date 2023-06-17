@@ -1,3 +1,4 @@
 C:\Users\kuuha\OneDrive\Desktop\game_project\game_project\x64\Debug\game_project.vcxproj.CopyComplete
 D:\College\Nhập môn PT Game\Repo Đồ Án\game_project\x64\Debug\game_project.vcxproj.CopyComplete
 D:\AndroidProject\test\todo_test\game_dev_project\game_project\x64\Debug\game_project.vcxproj.CopyComplete
+D:\College\Nhập môn PT Game\Repo Đồ Án\game_dev_project\game_project\x64\Debug\game_project.vcxproj.CopyComplete
