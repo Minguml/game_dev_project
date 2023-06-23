@@ -164,6 +164,22 @@ void CKoopa::OnCollisionWithQuestionBlock(LPCOLLISIONEVENT e)
 				thisscene->AddObjectToScene(mushroom);
 				thisscene->AddObjectToScene(newQuestionBlock);
 			}
+			else {
+				qBlock->SetEmpty(true);
+				float bx, by;
+				qBlock->GetPosition(bx, by);
+
+				LPSCENE thisscene = CGame::GetInstance()->GetCurrentScene();
+				CQuestionBlock* newQuesttionBlock = new CQuestionBlock(bx, by);
+				qBlock->Delete();
+				newQuesttionBlock->SetPosition(bx, by);
+
+				CLeaf* leaf = new CLeaf(bx + 16, by - 32);
+				newQuesttionBlock->SetEmpty(true);
+
+				thisscene->AddObjectToScene(leaf);
+				thisscene->AddObjectToScene(newQuesttionBlock);
+			}
 		}
 	}
 }

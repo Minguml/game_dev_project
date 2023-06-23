@@ -52,4 +52,7 @@ public:
 	virtual void SetState(int state);
 	virtual int GetType() { return type; }
 	virtual void SetType(int level) { type = level; }
+	virtual void Set_ay(float AY) {
+		this->ay = AY;
+	}
 };
